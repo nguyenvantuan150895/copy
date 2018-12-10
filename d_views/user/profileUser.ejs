@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Profile</title>
+    <title>Home Page User</title>
     <link rel="icon" type="image/png" href="/iconLogo.jpeg" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -26,139 +26,18 @@
     <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <!-- Import chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- Import jquery/3.3.1/min.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Import Morris -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-    <!-- Import Fusion Charts -->
-    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
-    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-
-
-
-    <!-- import slidereveal -->
-    <script src="/jquery.slidereveal.min.js"></script>
-    <!-- import ajax shortlink va js  -->
-    <script src="/js/enter/ajaxShort.js"></script>
-
-
-
-
-    <style>
-        #sticky {
-      text-align: center;
-      top: 0;
-      font-weight: bold;
-      color: white;
-      width: 150px;
-      height: 20px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-top: -3px;
-      background-color: #3c8dbc;
-      border: 2px solid #3c8dbc;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    } 
-    #mybtn{
-      background: none;
-      border: none;
-    }
-    #mybtn:focus {
-      outline: 0 !important;
-    }
-    #detail{
-      padding-top:20px;
-      border-top: 1px solid #74c0ec;
-      width: 100%;
-      height:380px;
-      background-color: #3c8dbc;
-      display: none;
-    }
-    .slider{
-      height: 300px; 
-      background-color: #222d32; 
-      padding-top: 80px;
-      padding-left: 20px;
-      padding-right: 40px;
-    }
-    #oldUrlShortLink{
-      color: blue;
-      margin-left: -15px;
-      padding-right: 20px;
-    }
-    #newUrlShortLink{
-      color: blue;
-      height: 30px;
-      font-weight: bold;
-      font-style: italic;
-    }
-    #listCampaign{
-      border: 1px dotted black;
-      overflow: auto;
-      padding-left: 15px;
-    }
-
-    /* width */
-    #listCampaign::-webkit-scrollbar {
-        width:10px;
-        height: 1px;
-    }
-
-    /* Track */
-    #listCampaign::-webkit-scrollbar-track {
-        background: #2c3b41; 
-    }
-    
-    /* Handle */
-    #listCampaign::-webkit-scrollbar-thumb {
-        background: #888; 
-        border-radius: 5px;
-    }
-
-    /* Handle on hover */
-    #listCampaign::-webkit-scrollbar-thumb:hover {
-        background: #555; 
-    }
-    .infoDetail:focus{
-    outline: none;
-    }
-    .infoDetail{
-      width: 100%; 
-      background: none;
-      border: none;
-      color: yellow;
-      border-bottom: 1px solid #74c0ec;
-      font-weight: bold;
-    }
-    .block{
-      margin-bottom: 15px;
-    }
-    .btn_list:focus{
-      outline: none;
-    }
-    .btn_list{
-      background: none;
-      color: #6595a7;
-      border: none;
-    }
-    .active, .btn_list:hover{
-      color:white;
-    }
-    div.block1{
-      background: transparent;
-      width: 100%;
-      height: 100px;
-      overflow-x: hidden;
-      overflow-y: scroll;
-    }
-  
-   
-   
-</style>
+    <!-- import library click copy -->
+    <link rel="icon" type="image/png" href="/iconLogo.jpeg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+    <!-- end import -->
+    <!-- import  sweetalert-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='/css/user/sweetalert2.min.css'>
+    <script src='/js/user/sweetalert2.all.min.js'></script>
+    <!-- end import -->
 
 </head>
 
@@ -168,13 +47,14 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="/enterprise/manager" class="logo">
+            <a href="/user/manager/1" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg">
                     <b>
-                        <%=domainH%></b><%=domainF%>
+                        <%=domainH%></b>
+                    <%=domainF%>
                 </span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
@@ -189,29 +69,17 @@
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <!-- Create ShortLink & Campaign -->
-                        <li>
-                            <div class="dropdown" style="margin-top: 7px">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" id="btnShort"> <b>Short Link</b> </a></li>
-                                    <li><a href="/enterprise/create" id="btnCampaign"> <b>Campaign</b> </a></li>
-                                </ul>
-                            </div>
-                        </li>
-
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <img src="/user.png" class="user-image" alt="User Image">
                                 <span class="hidden-xs">
                                     <%=ob_user.username%></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="/user.png" class="img-circle" alt="User Image">
 
                                     <p>
                                         <%=ob_user.username%>
@@ -221,11 +89,14 @@
 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="/enterprise/profile" class="btn btn-default btn-flat"><b>Profile</b></a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="/user/logout" class="btn btn-default btn-flat"> <b>Sign out</b> </a>
+                                    <div class="col-md-12">
+
+                                        <div class="pull-left">
+                                            <a href="/admin/profile" class="btn  "><b>Profile</b> </a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="/user/login" class="btn  "><b>Log out</b> </a>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -248,7 +119,7 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="/user.png" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>
@@ -257,62 +128,18 @@
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
-                <!-- search form -->
-                <form action="/enterprise/manager" method="get" class="sidebar-form" autocomplete="off">
-                    <div class="input-group">
-                        <input type="text" name="campaign" class="form-control" placeholder="Search campaign..." id="inputSearch">
-                        <span class="input-group-btn" valueSearch="<%=JSON.stringify(valueSearch)%>" id="idValueSearch">
-                            <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-                <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
-                <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header" arrCampaign="<%= JSON.stringify(arrCampaign) %>" id="arr_campaign">MAIN
-                        NAVIGATION
+                <br>
+                <br>
+                <ul>
+                    <li style="color : white; ">User name:
+                        <%= ob_user.username%>
                     </li>
-
-
-
-                    <li class="treeview active">
-                        <a href="#">
-                            <i class="fa fa-pie-chart"></i>
-                            <span>Campaign Manager</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <div id="listCampaign">
-                                <% for (var i = 0; i < arrCampaign.length ;  i++) { %>
-                                <li style="margin-top: 10px; padding-bottom: 10px">
-                                    <a href="/enterprise/detailCamp/<%=arrCampaign[i].id %>" class="fa fa-circle-o text-green">
-                                        <%=arrCampaign[i].name%>
-                                    </a>
-                                </li>
-                                <% } %>
-                            </div>
-                        </ul>
+                    <li style="color : white; ">Email:
+                        <%= ob_user.email%>
                     </li>
-
-                    <li>
-                        <a href="/enterprise/calendar">
-                            <i class="fa fa-calendar"></i> <span>Calendar</span>
-                            <span class="pull-right-container">
-                                <!-- <small class="label pull-right bg-red">3</small>
-                                <small class="label pull-right bg-blue">17</small> -->
-                            </span>
-                        </a>
-                    </li>
-
-
-                    <li id="export" style="display : none">
-                        <a href="/enterprise/export"><i class="fa fa-print"></i> <span>Export file excel</span></a>
-                    </li>
-                    <li class="header"> <b>SHORTEN LINK</b> </li>
-                    <li><a href="/enterprise/history/1"><i class="fa fa-circle-o text-red"></i> <span>History</span></a></li>
+                    <li style="color : white; ">Phone : 02413 884 999</li>
+                    <li style="color : white; ">Address: Hà Nội - Việt Nam</li>
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -321,32 +148,9 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd -->
-            <div id='slider' class="slider">
-                <label for="" style="color: white">PASTE LONG URL</label>
-                <br>
-                <div class="col-md-10"><textarea rows="3" cols="19" id="oldUrlShortLink"></textarea></div>
-                <div class="col-md-2"> <button style="height: 68px" class="btn btn-primary" id="btnGo">Go</button></div>
-                <br> <br><br> <br> <br>
-                <label for="" style="color: white">CUSTOMER SHORT LINK</label> <br>
-                <input type="text" id="newUrlShortLink" autocomplete="off"> <br> <br>
-                <button class="btn btn-primary" id="btnSave">Save</button>
-            </div>
-            <!--Slider premium -->
-            <div id="sliderPremium" class="slider">
-                <label for="" style="color: white">Please enter your domain name!</label><br>
-                <div class="col-md-10">
-                    <textarea rows="3" cols="19" id="idDomain" style="margin-left: -14px; width: 172px;"></textarea>
-                </div>
-                <div class="col-md-2">
-                    <button style="height: 68px" class="btn btn-primary" id="btnok">OK</button>
-                </div>
-                <label id="labelNotice" style="color:white; display: none;">Everything is almost finished, please point
-                    your domain to the server
-                    ip address provided below. Once completed you can access with the registered domain name!</label>
-                <br>
-                <input type="text" id="idIpServer" autocomplete="off" readonly style="display: none"> <br> <br>
-                <button class="btn btn-primary" id="idUnderstand" style="display: none"> I Understand</button>
-            </div>
+
+
+
 
             <!-- dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd -->
             <!-- Content Header (Page header) -->
@@ -366,10 +170,6 @@
                         <div class='col-md-12' id="scroll" style="border: 1px solid #d2d6dd; border-top: 4px solid #337ab7; border-radius: 4px; width: 100%;height: 100%; margin-left: auto; margin-right: auto; padding-top:20px"
                             class="register-box-body">
                             <i class="fa fa-fw fa-info-circle" style="font-size: 40px"></i>
-                            <!-- <h1 class="login-box-msg" style="font-weight: bold">
-                                Profile
-                            </h1> -->
-
                             <!-- <form > -->
                             <div class="col-md-12" style="padding-top:20px; padding-bottom: 40px">
                                 <div class="col-md-6">
@@ -395,23 +195,24 @@
                                             <p>Address: 315 Bach Mai / Hai Ba Trung / Ha Noi</p>
                                         </div>
                                         <div class="form-group">
-                                            <p>Join: 01/01/2018</p>
+                                            <p>Phone Number: 02413 884 999</p>
                                         </div>
                                         <div class="form-group">
-                                            <p>Comapany: HUST</p>
+                                            <p>Join: 01/01/2018</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12" style="padding-top: 20px; margin-bottom: -20px">
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">
-                                        <a style="float: right" class="btn btn-primary btn-md btn-block" href="/enterprise/editEnter/<%=ob_user.id%>">Edit</a>
-                                    </div>
-                                    <div class="col-md-4"></div>
                                 </div>
                             </div>
                             <!-- </form> -->
+                            <div class="col-md-12" style = "padding-bottom: 20px">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <a style="float: right" class="btn btn-primary btn-md btn-block" href="/user/editUser/<%=ob_user.id%>">Edit</a>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                            </div>
                         </div>
+                        
                     </div>
                     <!-- /.row -->
 

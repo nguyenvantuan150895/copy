@@ -38,11 +38,12 @@
     <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
 
 
-
     <!-- import slidereveal -->
     <script src="/jquery.slidereveal.min.js"></script>
     <!-- import ajax shortlink va js  -->
     <script src="/js/enter/ajaxShort.js"></script>
+    <!-- import editEnter.js -->
+    <script src="/js/enter/editEnter.js"></script>
 
 
 
@@ -363,54 +364,61 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class='col-md-12' id="scroll" style="border: 1px solid #d2d6dd; border-top: 4px solid #337ab7; border-radius: 4px; width: 100%;height: 100%; margin-left: auto; margin-right: auto; padding-top:20px"
-                            class="register-box-body">
-                            <i class="fa fa-fw fa-info-circle" style="font-size: 40px"></i>
-                            <!-- <h1 class="login-box-msg" style="font-weight: bold">
-                                Profile
-                            </h1> -->
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <!-- /.box-header -->
+                                <!-- *************************************** -->
+                                <div class="box-body">
+                                    <div style="border: 1px solid #d2d6dd; border-top: 4px solid #337ab7; border-radius: 4px; width: 100%;height: 440px; margin-left: auto; margin-right: auto"
+                                        class="register-box-body">
+                                        <i class=" glyphicon glyphicon-edit" style="font-size: 30px"></i>
+                                        <h3 class="login-box-msg"> Edit Profile </h3>
 
-                            <!-- <form > -->
-                            <div class="col-md-12" style="padding-top:20px; padding-bottom: 40px">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <p for="firstname">User Name:
-                                            <%=ob_user.username%>
-                                        </p>
-                                    </div>
-                                    <div class="form-group">
-                                        <p>Password:
-                                            <%=ob_user.password%>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p>Email:
-                                            <%=ob_user.email%>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <p>Address: 315 Bach Mai / Hai Ba Trung / Ha Noi</p>
+                                        <!-- <form action="/admin/manager/user/add" method="post"> -->
+                                        <b>Username</b>
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="form-control" placeholder="Enter..." id="idUsername"
+                                                name="account" value="<%=ob_user.username%>">
+                                            <span class=" glyphicon  glyphicon-user form-control-feedback"></span>
                                         </div>
-                                        <div class="form-group">
-                                            <p>Join: 01/01/2018</p>
+                                        <b>Password</b>
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="form-control" placeholder="Enter..." id="idPassword"
+                                                name="password" value="<%=ob_user.password%>">
+                                            <span class="fa fa-lock form-control-feedback"></span>
                                         </div>
-                                        <div class="form-group">
-                                            <p>Comapany: HUST</p>
+                                        <b>Email</b>
+                                        <div class="form-group has-feedback">
+                                            <input type="email" class="form-control" placeholder="Enter..." id="idEmail"
+                                                name="email" value="<%=ob_user.email%>">
+                                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                                         </div>
+                                        <!-- /.col -->
+                                        <div>
+                                            <div class="col-md-12">
+                                                <br>
+                                                <div class="col-xs-3"></div>
+                                                <div class="col-xs-3">
+                                                    <a style="float: right" class="btn btn-primary btn-md btn-block"
+                                                        href="#" id="submitEdit">Submit</a>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <a style="float: right" class="btn btn-primary btn-md btn-block"
+                                                        href="/enterprise/profile" id="idcancel">Cancel</a>
+                                                </div>
+                                                <div class="col-xs-3"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.col -->
                                     </div>
+                                    <!-- </form> -->
                                 </div>
-                                <div class="col-md-12" style="padding-top: 20px; margin-bottom: -20px">
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">
-                                        <a style="float: right" class="btn btn-primary btn-md btn-block" href="/enterprise/editEnter/<%=ob_user.id%>">Edit</a>
-                                    </div>
-                                    <div class="col-md-4"></div>
-                                </div>
+
+                                <!-- ************************************* -->
+                                <!-- /.box-body -->
                             </div>
-                            <!-- </form> -->
+                            <!-- /.box -->
                         </div>
                     </div>
                     <!-- /.row -->
